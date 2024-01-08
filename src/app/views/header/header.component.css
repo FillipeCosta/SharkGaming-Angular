@@ -1,0 +1,9 @@
+.mat-toolbar-row {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+}
+
+.logo img{
+  height: 60px;
+}
