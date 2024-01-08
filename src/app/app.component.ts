@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { NgForm } from '@angular/forms';
 
+import { FooterComponent } from './views/footer/footer.component';
 import { HeaderComponent } from './views/header/header.component';
 import { HomeComponent } from './views/home/home.component';
-import { FooterComponent } from './views/footer/footer.component';
+import { LoginComponent } from './views/login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +18,7 @@ import { FooterComponent } from './views/footer/footer.component';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
+    LoginComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
