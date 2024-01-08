@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { ClienteService } from '../../app/cliente.service';
 import { Cliente } from '../../app/models/Cliente.model';
 
-
 @Component({
   selector: 'app-listar-cliente',
   standalone: true,

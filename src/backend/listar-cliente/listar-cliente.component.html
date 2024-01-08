@@ -1,5 +1,4 @@
 <main>
-  <h2>Listar Cliente</h2>
   <table class="table">
     <thead>
       <tr>
@@ -20,13 +19,11 @@
             mat-raised-button
             color="primary"
             routerLink="../editar/{{ cliente.id }}"
-            >Editar</a
-          >
+            >Editar
+          </a>
         </td>
         <td>
-          <a mat-raised-butto routerLink="../excluir-cliente/{{cliente.id}"
-            >Excluir</a
-          >
+          <a mat-raised-button color="warn">Excluir</a>
         </td>
       </tr>
     </tbody>
