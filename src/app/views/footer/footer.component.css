@@ -1,10 +1,15 @@
 .footer{
-  display: block;
-  position: absolute;
-  bottom: 0;
-  font-size: 14px;
-  text-align: center;
-  padding-top: 20px;
-  color: #fff;
+  bottom:0;
   background-color: #000000;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+
+}
+
+.footer {
+  flex-shrink: 0;
 }

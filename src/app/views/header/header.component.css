@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-between;
   flex-flow: row nowrap;
+  background-color: #030704;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
 }
 
 .logo img{
@@ -12,3 +14,5 @@ a{
   text-decoration: none;
   color: #fff;
 }
+
+
