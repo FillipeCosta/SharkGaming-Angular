@@ -75,3 +75,8 @@ input:focus{
   width: 100%;
   font-weight: 500;
 }
+
+disabled{
+  background-color: #555555;
+  color: #ffffff;
+}

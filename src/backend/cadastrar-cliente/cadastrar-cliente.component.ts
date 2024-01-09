@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterModule, Router } from '@angular/router';
-import { ClienteService } from '../../app/cliente.service';
+import { Router, RouterModule } from '@angular/router';
 import { Cliente } from '../../app/models/Cliente.model';
+import { ClienteService } from '../../app/services/cliente.service';
 
 @Component({
   selector: 'app-cadastrar-cliente',

@@ -1,32 +1,46 @@
 <main>
-  <a mat-raised-button routerLink="/cadastrar" class="mb-3"> Cadastrar Clientes </a>
-  <table class="table">
+  <button
+    routerLink="/cadastrar"
+    class="mb-3 bg-dark"
+    mat-flat-button
+    color=""
+    aria-label="Example icon button with a bookmark icon"
+  >
+    <mat-icon>add</mat-icon>
+    <span>Adicionar novo Cliente</span>
+  </button>
+  <div class="example-button-container"></div>
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th scope="col">ID</th>
         <th>Nome</th>
         <th>Endereço</th>
-        <th>Editar</th>
-        <th>Excluir</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let cliente of clientes">
+      @for (cliente of clientes; track cliente.id) {
+      <tr>
         <th scope="row">{{ cliente.id }}</th>
         <td>{{ cliente.nome }}</td>
         <td>{{ cliente.endereco }}</td>
         <td>
           <a
-            mat-raised-button
+            mat-flat-button
             color="primary"
-            routerLink="../editar/{{ cliente.id }}"
+            routerLink="/editar/{{ cliente.id }}"
+            class="me-2"
             >Editar
           </a>
-        </td>
-        <td>
-          <a mat-raised-button color="warn">Excluir</a>
+          <a mat-flat-button color="warn" (click)="excluirCliente(cliente.id)">Excluir</a>
         </td>
       </tr>
+      }@empty {
+      <tr>
+        <td colspan="4">Nenhum cliente cadastrado :(</td>
+      </tr>
+      }
     </tbody>
   </table>
 </main>

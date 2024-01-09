@@ -19,26 +19,13 @@
       "nome": "Fillipe",
       "endereco": "Rua x, 123",
       "id": 4
-    },
+    }
+  ],
+  "usuarios": [
     {
-      "id": 0,
-      "nome": "Novo ",
-      "endereco": "QDD 22"
-    },
-    {
-      "id": 0,
-      "nome": "ff",
-      "endereco": "e"
-    },
-    {
-      "id": 0,
-      "nome": "",
-      "endereco": ""
-    },
-    {
-      "id": 0,
-      "nome": "",
-      "endereco": ""
+      "id": 1,
+      "nome": "admin",
+      "senha": "123"
     }
   ]
 }
