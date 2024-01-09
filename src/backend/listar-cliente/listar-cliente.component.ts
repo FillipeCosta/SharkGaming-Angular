@@ -9,7 +9,7 @@ import { Cliente } from '../../app/models/Cliente.model';
 @Component({
   selector: 'app-listar-cliente',
   standalone: true,
-  imports: [RouterModule, FormsModule, CommonModule, MatButtonModule],
+  imports: [RouterModule, FormsModule, CommonModule, MatButtonModule, RouterModule],
   templateUrl: './listar-cliente.component.html',
   styleUrl: './listar-cliente.component.css'
 })
