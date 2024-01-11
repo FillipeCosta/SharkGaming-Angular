@@ -1,35 +1,41 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { LoginServiceService } from '../../services/login.service.service';
+import { Component } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
+  loginForm: FormGroup;
 
-  @Input()
-    disabled: boolean = true;
-
-  form: FormGroup = this.fb.group({
-    usuario: ['', Validators.required],
-    senha: ['', Validators.required]
-  });
-
-  constructor(private _loginService: LoginServiceService, private fb: FormBuilder) { }
-
-  login() {
-    let usuario = this._loginService.login(this.form.value.usuario, this.form.value.senha);
-
-    if (usuario) {
-      alert('Login realizado com sucesso!');
-    } else {
-      alert('Usuário ou senha inválidos!');
-    }
+  constructor(private fb: FormBuilder, private authService: AuthService, private route: Router) {
+    this.loginForm = this.fb.group({
+      nome: ['', Validators.required],
+      senha: ['', Validators.required],
+    });
   }
 
+  onLogin(): void {
+    const { nome, senha } = this.loginForm.value;
+    this.authService.login(nome, senha).subscribe((res) => {
+      if (res.length) {
+        console.log('Login feito com sucesso', res[0]);
+        this.route.navigate(['/inicio']);
+      } else {
+        console.log('Login inválido');
+      }
+    });
+  }
 }

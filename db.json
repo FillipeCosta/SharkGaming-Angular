@@ -27,5 +27,28 @@
       "nome": "admin",
       "senha": "123"
     }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "produto": "Jogo 2",
+      "descricao": "Jogo de ação",
+      "foto": "jogo2.jpg",
+      "preco": 50
+    },
+    {
+      "id": 2,
+      "produto": "Jogo 3",
+      "descricao": "Jogo de aventura",
+      "foto": "jogo3.jpg",
+      "preco": 100
+    },
+    {
+      "id": 3,
+      "produto": "Jogo 4",
+      "descricao": "Jogo de estratégia",
+      "foto": "jogo1.jpg",
+      "preco": 150
+    }
   ]
 }

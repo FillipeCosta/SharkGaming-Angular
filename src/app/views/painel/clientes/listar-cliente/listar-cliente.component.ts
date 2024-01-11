@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Router, RouterModule } from '@angular/router';
-import { Cliente } from '../../app/models/Cliente.model';
-import { ClienteService } from '../../app/services/cliente.service';
+import { Cliente } from '../../../../models/Cliente.model';
+import { ClienteService } from '../../../../services/cliente.service';
 @Component({
   selector: 'app-listar-cliente',
   standalone: true,

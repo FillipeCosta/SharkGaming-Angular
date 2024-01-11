@@ -7,13 +7,12 @@
       <h2>Bem Vindo!</h2>
     </div>
 
-    <form class="row-g3" [formGroup]="form">
+    <form class="row-g3" [formGroup]="loginForm" (ngSubmit)="onLogin()">
       <div class="mb-2 row">
         <input
           type="text"
-          name="usuario"
+          formControlName="nome"
           class="form-control"
-          id="staticUsuario"
           placeholder="Usuário"
         />
       </div>
@@ -21,21 +20,14 @@
       <div class="mb-4 row">
         <input
           type="password"
-          name="senha"
+          formControlName="senha"
           class="form-control"
-          id="inputPassword"
           placeholder="Senha"
         />
       </div>
 
       <div class="mb-3 row">
-        <button
-          class="btn btn-primary"
-          (click)="login()"
-          [disabled]="!form.valid"
-        >
-          Entrar
-        </button>
+        <button class="btn btn-primary" >Entrar</button>
       </div>
     </form>
   </section>
