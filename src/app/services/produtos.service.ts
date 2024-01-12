@@ -30,8 +30,8 @@ export class ProdutosService {
     return this.http.put<Produto[]>(urlAtualizar, produto)
   }
 
-  removerProduto(id: any): Observable<Produto>{
+  removerProduto(id: any): Observable<Produto[]>{
     const urlRemover = `${this.urlApi}/${id}`;
-    return this.http.delete<Produto>(urlRemover);
+    return this.http.delete<Produto[]>(urlRemover);
   }
 }

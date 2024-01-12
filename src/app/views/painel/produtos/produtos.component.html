@@ -30,14 +30,8 @@
         <td>{{ produto.descricao }}</td>
         <td> <img src="./assets/img/{{ produto.foto }}" alt=""> </td>
         <td>
-          <a
-            mat-flat-button
-            color="primary"
-            class="me-2"
-            routerLink="editar/{{produto.id}}"
-            >Editar
-          </a>
-          <a mat-flat-button color="warn">Excluir</a>
+          <a mat-flat-button color="primary" class="me-2" routerLink="editar/{{produto.id}}" >Editar </a>
+          <button mat-flat-button color="warn" (click)="excluirProduto(produto.id)">Excluir</button>
         </td>
       </tr>
       }@empty {

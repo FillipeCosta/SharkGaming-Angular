@@ -2,9 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { Produto } from '../../../models/Produto.model';
 import { ProdutosService } from '../../../services/produtos.service';
+import { error } from 'console';
+
 
 @Component({
   selector: 'app-produtos',
@@ -17,7 +19,7 @@ export class ProdutosComponent {
 
   public produtos: Produto [] = [];
 
-  constructor(private _produto: ProdutosService){}
+  constructor(private _produto: ProdutosService, private router: Router){}
 
   ngOnInit() {
     this.listarProdutos();
@@ -40,5 +42,17 @@ export class ProdutosComponent {
       }
     )
 
+  }
+
+  excluirProduto(id: number) {
+    this._produto.removerProduto(id).subscribe({
+      next: (produto) => {
+        this.listarProdutos();
+        this.router.navigate(['/produtos/listar'])
+      },
+      error: (error) => {
+        console.log("Erro ao excluir produto");
+      },
+    });
   }
 }
